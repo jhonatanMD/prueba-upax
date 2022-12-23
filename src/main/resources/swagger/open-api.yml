@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: BUYERS - OpenAPI 3.0
+  description: |- 
+    Servicio para obtener a los compradores
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: jmdiaz190899@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.1
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: localhost:8080
+tags:
+  - name: Buyers
+    description: Obtener a todos los compradores 
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+paths:
+  /buyers:
+    get:
+      tags:
+        - Buyers
+      summary: Obtener a los compradores
+      description: Obtener a los compradores
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Buyers'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Buyer not found
+        '405':
+          description: Validation exception
+components:
+  schemas:
+    Buyers:
+      type: object
+      properties:
+        Customers:
+          type: array
+          items:
+            $ref: '#/components/schemas/buyer'
+    buyer:
+      type: object
+      properties:
+        customerNumber:
+          type: integer
+          description: Numero de cliente
+          format: int64
+          example: 103
+        customerName:
+          type: string
+          description: Nombre de cliente
+          example: Atelier graphique
+        contactLastName:
+          type: string
+          description: Apellido de cliente
+          example: Schmitt
+        contactFirstName:
+          type: string
+          description: Nombre de contacto de cliente
+          example: Carine
+        phone:
+          type: string
+          description: Numero de celulaar
+          example: 40.32.2555
+        addressLine1:
+          type: string
+          description: Primera direccion de cliente
+          example: '54, rue Royale'
+        addressLine2:
+          type: string
+          description: Segunda direccion de cliente
+          example: ''
+        city:
+          type: string
+          description: Ciudad de cliente
+          example: 1  
+        state:
+          type: string
+          description: Estado de cliente
+          example: ''  
+        postalCode:
+          type: string
+          description: Codigo postal de cliente
+          example: 44000  
+        country:
+          type: string
+          description: Pais de clinete
+        salesRepEmployeeNumber:
+          type: string
+          description:  Ventas de cliente a empleado
+          example: 1370    
+        creditLimit:
+          type: string
+          description: Credito limite de cliente
+          example: 21000.00
+   
