@@ -41,4 +41,5 @@ mvn package
 
 * Para la documentación ir a la ruta : http://localhost:8080/swagger-ui.html
 * Se podra ver los endpoint de la api y su funcionalidad
+![image](https://user-images.githubusercontent.com/48395505/209391296-0b610160-827f-48f3-8391-3fe617250ba1.png)
 
